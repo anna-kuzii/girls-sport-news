@@ -2,7 +2,7 @@
 
 **B**abel **Re**act **Ko**a - **H**ot **U**niversal **B**oilerplate
 
-## Breko Hub
+## Sport News
 
 [![Greenkeeper badge](https://badges.greenkeeper.io/tomatau/breko-hub.svg)](https://greenkeeper.io/)
 
