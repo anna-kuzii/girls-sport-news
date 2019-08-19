@@ -5,6 +5,7 @@ import { hot } from 'react-hot-loader/root'
 import { app as appCopy } from 'app/copy'
 import { routesList } from 'app/routes'
 import style from './App.module.scss'
+import Registration from "../Registration/Registration";
 
 class App extends React.Component {
   render() {
@@ -42,6 +43,8 @@ class App extends React.Component {
               ))}
             </Switch>
           </main>
+
+          <Registration/>
         </div>
       </>
     )
