@@ -2,14 +2,18 @@ import React from 'react';
 import {Container, Row, Col} from 'react-bootstrap';
 import './registration.scss';
 
+
 const Registration = () => {
   render()
   {
+
     return (
       <Container className='formWrapper'>
-        <h1>Create Account</h1>
-        <img/>
-        <img/>
+        <Row>
+          <h1>Create Account</h1>
+          <img/>
+          <img/>
+        </Row>
         <form method='post'>
           <fieldset>
             <legend>OR use your email for registration:</legend>
@@ -34,7 +38,7 @@ const Registration = () => {
               </Col>
             </Row>
             <Row>
-              <Col>
+              <Col xs={12}>
                 <label htmlFor='email'>Email</label>
                 <input type='email'
                        name='email'
@@ -42,9 +46,7 @@ const Registration = () => {
                        required={required}
                        placeholder='jonhdoe@gmail.com'/>
               </Col>
-            </Row>
-            <Row>
-              <Col>
+              <Col xs={12}>
                 <label htmlFor='password'>Email</label>
                 <input
                   type='password'
@@ -54,16 +56,18 @@ const Registration = () => {
                   required={required}
                   placeholder='4 + characters'/>
               </Col>
+              <Col xs={12}>
+                <input name='submit'
+                       type='submit'
+                       value='Sign up'/>
+              </Col>
             </Row>
-            <input name='submit'
-                   type='submit'
-                   value='Sign up'/>
           </fieldset>
         </form>
       </Container>
     );
-  }
 
+  }
 };
 
 export default Registration;

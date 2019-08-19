@@ -1,3 +1,5 @@
+@import '../../../styles/vars';
+
 .formWrapper {
   h1 {
     font-size: 24px;
@@ -8,14 +10,14 @@
   legend {
     font-size: 12px;
     line-height: 16px;
-    color: #434C5D;
+    color: $river-bed;
   }
 
   label {
     font-size: 10px;
     line-height: 11px;
     letter-spacing: 0.9px;
-    color: #434C5D;
+    color: $river-bed;
     text-transform: uppercase;
   }
 
@@ -24,7 +26,7 @@
       padding: 5px;
       font-size: 12px;
       line-height: 16px;
-      border: 1px solid #D4D9E2;
+      border: 1px solid $mischka;
 
       &::-webkit-input-placeholder {
         color: #C6CCD7;
@@ -37,7 +39,7 @@
       letter-spacing: 0.8px;
       color: white;
       text-transform: uppercase;
-      background: #D72130;
+      background: $alizarin-crimson;
     }
   }
 }

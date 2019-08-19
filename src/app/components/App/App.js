@@ -1,11 +1,12 @@
 import React from 'react'
 import DocumentMeta from 'react-helmet'
-import { Switch, Route } from 'react-router-dom'
-import { hot } from 'react-hot-loader/root'
-import { app as appCopy } from 'app/copy'
-import { routesList } from 'app/routes'
+import {Switch, Route} from 'react-router-dom'
+import {hot} from 'react-hot-loader/root'
+import {app as appCopy} from 'app/copy'
+import {routesList} from 'app/routes'
 import style from './App.module.scss'
-import Registration from "../Registration/Registration";
+import Registration from '../Registration/Registration';
+
 
 class App extends React.Component {
   render() {
@@ -15,10 +16,10 @@ class App extends React.Component {
           defaultTitle={`${appCopy.title}`}
           titleTemplate={`%s | ${appCopy.title}`}
         >
-          <html lang='en' />
-          <meta charSet='utf-8' />
-          <meta name='description' content={appCopy.meta.description} />
-          <meta name='keywords' content={appCopy.meta.keywords} />
+          <html lang='en'/>
+          <meta charSet='utf-8'/>
+          <meta name='description' content={appCopy.meta.description}/>
+          <meta name='keywords' content={appCopy.meta.keywords}/>
           <meta
             name='viewport'
             content='width=device-width,initial-scale=1.0'
@@ -43,7 +44,6 @@ class App extends React.Component {
               ))}
             </Switch>
           </main>
-
           <Registration/>
         </div>
       </>
