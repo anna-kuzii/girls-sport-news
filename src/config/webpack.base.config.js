@@ -92,6 +92,9 @@ export default {
             options: svgoConfig,
           },
         ],
+      }, {
+        test: /\.css$/,
+        loader: 'style-loader!css-loader',
       },
     ],
   },

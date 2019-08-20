@@ -1,0 +1,17 @@
+@import 'vars';
+
+body,
+html {
+  padding: 0;
+  margin: 0;
+  font-family: $roboto-regular, sans-serif;
+  box-sizing: border-box;
+}
+
+input {
+  &[type='submit'] {
+    &:not(:disabled) {
+      cursor: url('../assets/img/cursor.png'), auto;
+    }
+  }
+}

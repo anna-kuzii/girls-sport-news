@@ -1,45 +1,113 @@
 @import '../../../styles/vars';
 
-.formWrapper {
+.registrationWrapper {
+
+  &.container {
+    max-width: 390px;
+
+    @media screen and (max-width: $max-mobile-width) {
+      max-width: 100%;
+      background-color: $black;
+    }
+  }
+
   h1 {
+    margin-bottom: 20px;
+    font-family: $sans-bold;
     font-size: 24px;
     line-height: 33px;
-    color: black;
+    color: $black;
+
+    @media screen and (max-width: $max-mobile-width) {
+      color: $white;
+    }
+  }
+
+  .socialIcons {
+    margin-bottom: 20px;
+  }
+
+  svg {
+    width: 32px;
+    height: 32px;
+
+    &:hover {
+      path {
+        stroke: $alizarin-crimson;
+      }
+    }
+  }
+}
+
+.formWrapper {
+
+  .inputItem {
+    margin-bottom: 20px;
   }
 
   legend {
+    font-family: $sans-regular;
     font-size: 12px;
     line-height: 16px;
     color: $river-bed;
+
+    @media screen and (max-width: $max-mobile-width) {
+      color: $white;
+    }
   }
 
   label {
+    margin-bottom: 8px;
+    font-family: $roboto-regular;
     font-size: 10px;
     line-height: 11px;
-    letter-spacing: 0.9px;
+    letter-spacing: .9px;
     color: $river-bed;
     text-transform: uppercase;
+
+    @media screen and (max-width: $max-mobile-width) {
+      color: $white;
+    }
   }
 
   input {
     &:not([type='submit']) {
-      padding: 5px;
+      width: 100%;
+      padding: 10px;
+      font-family: $sans-regular;
       font-size: 12px;
       line-height: 16px;
+      color: $black;
+      background-color: $white;
       border: 1px solid $mischka;
 
+      // sass-lint:disable no-vendor-prefixes
       &::-webkit-input-placeholder {
-        color: #C6CCD7;
+        color: $ghost;
+      }
+
+      &:hover {
+        border: 1px solid $aluminium;
+      }
+
+      &:focus {
+        border: 1px solid $aluminium;
+        outline: none;
       }
     }
 
     &[type='submit'] {
+      width: 100%;
+      padding: 15px 10px;
+      margin-top: 15px;
+      font-family: $roboto-bold;
       font-size: 12px;
       line-height: 14px;
-      letter-spacing: 0.8px;
-      color: white;
+      letter-spacing: .8px;
+      color: $white;
       text-transform: uppercase;
       background: $alizarin-crimson;
+      border: 0;
     }
   }
 }
