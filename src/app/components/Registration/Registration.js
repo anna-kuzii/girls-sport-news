@@ -8,13 +8,13 @@ import SVG from 'react-inlinesvg'
 
 export const Registration = () => (
 
-  <Container className='registrationWrapper'>
+  <Container className='registrationWrapper formWrapper'>
     <h1>Create Account</h1>
     <section className='socialIcons'>
-      <SVG src={facebookIcon} />
-      <SVG src={twitterIcon} />
+      <SVG src={facebookIcon} className='facebookIcon' />
+      <SVG src={twitterIcon} className='twitterIcon' />
     </section>
-    <form method='post' className='formWrapper'>
+    <form method='post'>
       <fieldset>
         <legend>OR use your email for registration:</legend>
         <Row>
