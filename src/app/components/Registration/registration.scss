@@ -25,15 +25,13 @@
 
   .socialIcons {
     margin-bottom: 20px;
-  }
 
-  svg {
-    width: 32px;
-    height: 32px;
+    svg {
+      width: 32px;
+      height: 32px;
 
-    &:hover {
-      path {
-        stroke: $alizarin-crimson;
+      &:first-of-type {
+        margin-right: 10px;
       }
     }
   }

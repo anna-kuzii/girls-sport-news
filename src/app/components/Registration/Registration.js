@@ -2,6 +2,7 @@ import React from 'react'
 import { Container, Row, Col } from 'react-bootstrap'
 import './registration.scss'
 import facebookIcon from './assets/facebook-icon.svg'
+import twitterIcon from './assets/twitter-icon.svg';
 import SVG from 'react-inlinesvg'
 
 
@@ -11,6 +12,7 @@ export const Registration = () => (
     <h1>Create Account</h1>
     <section className='socialIcons'>
       <SVG src={facebookIcon} />
+      <SVG src={twitterIcon} />
     </section>
     <form method='post' className='formWrapper'>
       <fieldset>
