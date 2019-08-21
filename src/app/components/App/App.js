@@ -2,7 +2,7 @@ import React from 'react'
 import DocumentMeta from 'react-helmet'
 import { hot } from 'react-hot-loader/root'
 import { app as appCopy } from 'app/copy'
-import { Registration } from '../Registration/Registration'
+import { Registration } from '../Registration'
 
 
 class App extends React.Component {

@@ -26,23 +26,23 @@
           fill: $alizarin-crimson;
         }
       }
+    }
 
-      &.facebookIcon {
-        &:hover {
-          path {
-            &:first-of-type {
-              stroke: $alizarin-crimson;
-              fill: $white;
-            }
-          }
-        }
-
+    .facebookIcon {
+      &:hover {
         path {
           &:first-of-type {
-            @media screen and (max-width: $max-mobile-width) {
-              stroke: $white;
-              fill: $black;
-            }
+            stroke: $alizarin-crimson;
+            fill: $white;
+          }
+        }
+      }
+
+      path {
+        &:first-of-type {
+          @media screen and (max-width: $max-mobile-width) {
+            stroke: $white;
+            fill: $black;
           }
         }
       }
