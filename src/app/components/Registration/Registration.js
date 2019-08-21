@@ -2,7 +2,7 @@ import React from 'react'
 import { Container, Row, Col } from 'react-bootstrap'
 import './registration.scss'
 import facebookIcon from './assets/facebook-icon.svg'
-import twitterIcon from './assets/twitter-icon.svg';
+import twitterIcon from './assets/twitter-icon.svg'
 import SVG from 'react-inlinesvg'
 
 
