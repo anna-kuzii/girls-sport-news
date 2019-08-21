@@ -1,10 +1,6 @@
 // placeholder file
-@import '~vars';
-@import '~tao-scss/index';
+@import 'vars';
+@import 'fonts';
+@import 'general';
+@import 'form';
 
-$body-colour: #444;
-
-body {
-  color: $body-colour;
-  font-family: Arial;
-}

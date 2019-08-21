@@ -1,10 +1,9 @@
 import React from 'react'
 import DocumentMeta from 'react-helmet'
-import { Switch, Route } from 'react-router-dom'
 import { hot } from 'react-hot-loader/root'
 import { app as appCopy } from 'app/copy'
-import { routesList } from 'app/routes'
-import style from './App.module.scss'
+import { Registration } from '../Registration'
+
 
 class App extends React.Component {
   render() {
@@ -23,26 +22,7 @@ class App extends React.Component {
             content='width=device-width,initial-scale=1.0'
           />
         </DocumentMeta>
-        <div className={style.app}>
-          <header role='banner'>
-            <h1>{appCopy.title}</h1>
-          </header>
-          <main
-            aria-live='polite'
-            className={style.content}
-          >
-            <Switch>
-              {routesList.map(route => (
-                <Route
-                  key={route.name}
-                  exact={route.exact}
-                  path={route.path}
-                  component={route.component}
-                />
-              ))}
-            </Switch>
-          </main>
-        </div>
+        <Registration />
       </>
     )
   }
