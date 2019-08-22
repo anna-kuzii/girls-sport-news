@@ -7,7 +7,6 @@ import SVG from 'react-inlinesvg'
 
 
 export const Registration = () => (
-
   <Container className='registrationWrapper formWrapper'>
     <h1>Create Account</h1>
     <section className='socialIcons'>
