@@ -8,6 +8,7 @@ import { ROOT, SERVER, SOCKETS, STATIC } from 'config/paths'
 import { isomorphicTools, isomorphicPlugin } from 'server/isomorphic-tools'
 import app from 'server-instance'
 
+
 const log = debug('app')
 
 if (isEnv('development')) {
@@ -32,6 +33,10 @@ isomorphicTools.server(ROOT, async () => {
 })
 
 const server = http.createServer(app.callback())
+
+// app.use(function* index() {
+//   yield send(this, '/static');
+// });
 
 global.socketServer = require(SOCKETS).default(server)
 
