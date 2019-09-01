@@ -3,6 +3,8 @@ import DocumentMeta from 'react-helmet'
 import { hot } from 'react-hot-loader/root'
 import { app as appCopy } from 'app/copy'
 import { Registration } from '../Registration'
+import {Menu} from '../Menu/index.jsx'
+import data from '../menu-item.json'
 
 
 class App extends React.Component {
@@ -22,7 +24,7 @@ class App extends React.Component {
             content='width=device-width,initial-scale=1.0'
           />
         </DocumentMeta>
-        <Registration />
+
       </>
     )
   }
