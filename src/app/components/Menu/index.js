@@ -52,7 +52,7 @@
 // }
 
 import React, {Component} from 'react';
-import {MenuItem} from '../MenuItem/index.jsx';
+import {MenuItem} from '../MenuItem/index.js';
 
 export class Menu extends Component {
   constructor(props) {

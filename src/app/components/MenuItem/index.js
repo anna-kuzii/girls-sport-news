@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Menu} from '../Menu/index.jsx';
+import {Menu} from '../Menu/index.js';
 
 export class MenuItem extends Component {
   constructor(props) {
