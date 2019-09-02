@@ -19,10 +19,10 @@
     "coverage": "scripty",
     "coverage:check": "babel-istanbul check-coverage"
   },
-  "pre-push": [
-    "lint:js",
-    "lint:styles"
-  ],
+//  "pre-push": [
+//    "lint:js",
+//    "lint:styles"
+//  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/tomatau/breko-hub.git"
