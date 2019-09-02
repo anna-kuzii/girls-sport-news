@@ -6,9 +6,7 @@ import { Registration } from '../Registration'
 import { Menu } from '../Menu'
 import data from '../../../assets/data/menu-items.json'
 
-
 class App extends React.Component {
-
   render() {
     return (
       <>

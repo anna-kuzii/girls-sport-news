@@ -18,12 +18,14 @@ export async function setRoutes(assets) {
     /* wire up flashMessages from redirect to server store */
     require('server/middleware/flash-messages').default,
     /* map assets from bundle to ctx fo html */
-    require('server/middleware/map-assets').default(assets),
+    require('server/middleware/map-assets')
+      .default(assets),
     /* set response body from react app */
-    require('server/middleware/render-app').default(),
+    require('server/middleware/render-app')
+      .default(),
   ])
 
-  const { apiRouter, setApiRoutes } = require('server/api')
+  const { apiRouter, setApiRoutes } = require('server/api')
 
   setApiRoutes()
 

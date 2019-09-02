@@ -17,9 +17,7 @@
       "version": "16.5"
     }
   },
-  "extends": [
-    "plugin:jsx-a11y/recommended"
-  ],
+  "extends": "eslint:recommended",
   "rules": {
     "array-bracket-spacing": [2, "always"],
     "comma-dangle": [1, "always-multiline"],

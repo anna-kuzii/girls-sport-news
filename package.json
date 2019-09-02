@@ -81,6 +81,7 @@
     "connected-react-router": "^6.5.2",
     "css-modules-require-hook": "^4.2.3",
     "debug": "^4.1.1",
+    "eslint-config-airbnb": "^18.0.1",
     "extract-hoc": "0.0.5",
     "history": "^4.9.0",
     "is-promise": "~2.1.0",

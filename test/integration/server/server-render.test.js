@@ -128,7 +128,7 @@ describe('Server Side Render', function () {
     supertest(app.callback())
       .get('/test')
       .expect(200)
-      .expect(/<body>.*<script src="\/test-deferred-asset.js\"><\/script>.*<\/body>/)
+      .expect(/<body>.*<script src="\/test-deferred-asset.js"><\/script>.*<\/body>/)
       // use loadCSS for deferred CSS and <noscript> fallback
       .expect(/<body>.*<script>loadCSS\('\/test-deferred-asset.css'\)<\/script>.*<\/body>/)
       .expect(/<body>.*<noscript><link href="\/test-deferred-asset.css" rel="stylesheet" \/><\/noscript>.*<\/body>/)

@@ -28,7 +28,7 @@ export const secondArg = unapply(nth(1))
 
 const isValidAttrName = either(
   isOneOf(validAttributes),
-  test(/^data\-\w/)
+  test(/^data\w/)
 )
 
 export const cleanProps = pickBy(

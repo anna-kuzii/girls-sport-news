@@ -10,23 +10,23 @@ export class MenuItem extends Component {
     }
   }
 
-  openMenu = () => {
+  handleOpenMenu = () => {
     this.setState((prevState) => ({
-        ...prevState,
-        opened: !prevState.opened,
-      }),
+      ...prevState,
+      opened: !prevState.opened,
+    }),
     )
   }
 
   render() {
-    const { title, menu } = this.props.menu
+    const { menu: { title, menu } } = this.props
+    const { opened } = this.state
 
     return (
-      <div className='listItem' onClick={this.openMenu}>
+      <div className='listItem' onClick={this.handleOpenMenu}>
         {title}
-        {this.state.opened && <Menu menuList={menu}/>}
+        {opened && <Menu menuList={menu} />}
       </div>
     )
-
   }
 }

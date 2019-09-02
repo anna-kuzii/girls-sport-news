@@ -8,7 +8,7 @@ export default function (key='flash') {
     }
     await next()
     if (ctx.status === 302 && ctx.session) {
-      ctx.session[key] = ctx.nextFlash
+      ctx.session[key] = ctx.nextFlash // eslint-disable-line require-atomic-updates
     } else {
       delete ctx.session[key]
     }
