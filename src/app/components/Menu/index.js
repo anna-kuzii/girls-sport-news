@@ -1,5 +1,5 @@
-import React from 'react'
-import { MenuItem } from './MenuItem'
+import React from 'react';
+import { MenuItem } from './MenuItem';
 
 export const Menu = ({ menuList }) => (
   <div className='desktop-menu-container'>
@@ -9,4 +9,4 @@ export const Menu = ({ menuList }) => (
       )}
     </div>
   </div>
-)
+);

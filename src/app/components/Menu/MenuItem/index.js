@@ -1,13 +1,13 @@
-import React, { Component } from 'react'
-import { Menu } from '../../Menu'
+import React, { Component } from 'react';
+import { Menu } from '../../Menu';
 
 export class MenuItem extends Component {
   constructor(props) {
-    super(props)
+    super(props);
 
     this.state = {
       opened: false,
-    }
+    };
   }
 
   handleOpenMenu = () => {
@@ -15,18 +15,18 @@ export class MenuItem extends Component {
       ...prevState,
       opened: !prevState.opened,
     }),
-    )
+    );
   }
 
   render() {
-    const { menu: { title, menu } } = this.props
-    const { opened } = this.state
+    const { menu: { title, menu } } = this.props;
+    const { opened } = this.state;
 
     return (
       <div className='listItem' onClick={this.handleOpenMenu}>
         {title}
         {opened && <Menu menuList={menu} />}
       </div>
-    )
+    );
   }
 }

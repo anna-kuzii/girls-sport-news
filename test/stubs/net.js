@@ -1,3 +1,3 @@
 export default {
   isIP: () => false,
-}
+};

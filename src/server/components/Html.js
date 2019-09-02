@@ -1,11 +1,11 @@
-import React from 'react'
-import Helmet from 'react-helmet'
-import PropTypes from 'prop-types'
+import React from 'react';
+import Helmet from 'react-helmet';
+import PropTypes from 'prop-types';
 
 const reactElementsPropType = PropTypes.oneOfType([
   PropTypes.arrayOf(PropTypes.node),
   PropTypes.node,
-])
+]);
 
 export default class Html extends React.Component {
   static propTypes = {
@@ -43,9 +43,9 @@ export default class Html extends React.Component {
       bodyElements,
       deferredScripts,
       deferredStyles,
-    } = this.props
-    const helmet = Helmet.renderStatic()
-    const { lang, ...htmlAttrs } = helmet.htmlAttributes.toComponent()
+    } = this.props;
+    const helmet = Helmet.renderStatic();
+    const { lang, ...htmlAttrs } = helmet.htmlAttributes.toComponent();
     return (
       <html lang={lang} {...htmlAttrs}>
         <head>
@@ -107,6 +107,6 @@ export default class Html extends React.Component {
           ))}
         </body>
       </html>
-    )
+    );
   }
 }

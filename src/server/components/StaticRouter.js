@@ -1,7 +1,7 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import { Router } from 'react-router-dom'
-import { createMemoryHistory } from 'history'
+import React from 'react';
+import PropTypes from 'prop-types';
+import { Router } from 'react-router-dom';
+import { createMemoryHistory } from 'history';
 
 class StaticRouter extends React.Component {
   static propTypes = {
@@ -13,7 +13,7 @@ class StaticRouter extends React.Component {
   };
 
   render() {
-    const { history, ...props } = this.props
+    const { history, ...props } = this.props;
 
     return (
       <Router
@@ -21,8 +21,8 @@ class StaticRouter extends React.Component {
         history={history}
         staticContext={history}
       />
-    )
+    );
   }
 }
 
-export default StaticRouter
+export default StaticRouter;

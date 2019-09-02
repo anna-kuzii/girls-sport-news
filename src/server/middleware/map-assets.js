@@ -1,11 +1,11 @@
-import { compact, get, ConfigService } from 'app/utils'
+import { compact, get, ConfigService } from 'app/utils';
 
-const getJavascripts = get('javascript', {})
-const getStyles = get('styles', {})
+const getJavascripts = get('javascript', {});
+const getStyles = get('styles', {});
 
 export default function (assets) {
-  const javascripts = getJavascripts(assets)
-  const styles = getStyles(assets)
+  const javascripts = getJavascripts(assets);
+  const styles = getStyles(assets);
 
   return async function mapAssets(ctx, next) {
     ctx.assets = {
@@ -24,7 +24,7 @@ export default function (assets) {
       deferredStyles: compact([
         styles.deferred,
       ]),
-    }
-    await next()
-  }
+    };
+    await next();
+  };
 }

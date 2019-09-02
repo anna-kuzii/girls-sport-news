@@ -1,7 +1,7 @@
-import Chance from 'chance'
-import { concat, append } from 'ramda'
+import Chance from 'chance';
+import { concat, append } from 'ramda';
 
-const chance = new Chance()
+const chance = new Chance();
 
 export const messages = {
   makeMessage: (msgOverrides) => ({
@@ -10,7 +10,7 @@ export const messages = {
     type: chance.pickone([ 'info', 'good', 'error' ]),
     ...msgOverrides,
   }),
-}
+};
 
 const transforms = {
   makeMessages: () => [],
@@ -23,6 +23,6 @@ const transforms = {
     messages.makeMessage({ type: 'error' }),
   ]),
   addRandomMessage: append(messages.makeMessage()),
-}
+};
 
-export default transforms
+export default transforms;

@@ -1,11 +1,11 @@
-import React from 'react'
-import { connect } from 'react-redux'
-import DocumentMeta from 'react-helmet'
-import { noop } from 'app/utils'
-import { barRoute as barRouteCopy } from 'app/copy'
-import { apiFetch } from 'app/modules/bar/bar.actions'
-import { getBar } from 'app/modules/bar/bar.selectors'
-import style from './BarRoute.module.scss'
+import React from 'react';
+import { connect } from 'react-redux';
+import DocumentMeta from 'react-helmet';
+import { noop } from 'app/utils';
+import { barRoute as barRouteCopy } from 'app/copy';
+import { apiFetch } from 'app/modules/bar/bar.actions';
+import { getBar } from 'app/modules/bar/bar.selectors';
+import style from './BarRoute.module.scss';
 
 @connect(state => ({
   bar: getBar(state),
@@ -17,12 +17,12 @@ export default class BarRoute extends React.Component {
   };
 
   componentDidMount() {
-    const { apiFetch } = this.props
-    apiFetch()
+    const { apiFetch } = this.props;
+    apiFetch();
   }
 
   render() {
-    const { bar } = this.props
+    const { bar } = this.props;
     return (
       <>
         <DocumentMeta>
@@ -37,6 +37,6 @@ export default class BarRoute extends React.Component {
           </div>
         </section>
       </>
-    )
+    );
   }
 }

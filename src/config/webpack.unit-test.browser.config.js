@@ -1,10 +1,10 @@
-import webpack from 'webpack'
-import path from 'path'
-import glob from 'glob'
-import ExtractTextPlugin from 'extract-text-webpack-plugin'
-import HtmlWebpackPlugin from 'html-webpack-plugin'
-import webpackConfig, { babelLoaderConfig } from 'config/webpack.base.config'
-import { TESTS, ROOT, SRC } from 'config/paths'
+import webpack from 'webpack';
+import path from 'path';
+import glob from 'glob';
+import ExtractTextPlugin from 'extract-text-webpack-plugin';
+import HtmlWebpackPlugin from 'html-webpack-plugin';
+import webpackConfig, { babelLoaderConfig } from 'config/webpack.base.config';
+import { TESTS, ROOT, SRC } from 'config/paths';
 
 export default {
   ...webpackConfig,
@@ -93,4 +93,4 @@ export default {
       },
     } ],
   },
-}
+};
