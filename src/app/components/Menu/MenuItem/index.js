@@ -1,32 +1,36 @@
 import React, { Component } from 'react';
 import { Menu } from '../../Menu';
+import '../style.scss';
 
 export class MenuItem extends Component {
   constructor(props) {
     super(props);
-
-    this.state = {
-      opened: false,
-    };
   }
 
   handleOpenMenu = () => {
-    this.setState((prevState) => ({
-      ...prevState,
-      opened: !prevState.opened,
-    }),
-    );
-  }
+    const { index, setActiveItem, item } = this.props;
+    if (item.menu) {
+      setActiveItem(index);
+    }
+  };
 
   render() {
-    const { menu: { title, menu } } = this.props;
-    const { opened } = this.state;
+    const { index, activeItem } = this.props,
+      { item: { title, menu } } = this.props,
+      isActive = index === activeItem,
+      activeClass = isActive ? 'activeItem': '';
 
     return (
-      <div className='listItem' onClick={this.handleOpenMenu}>
-        {title}
-        {opened && <Menu menuList={menu} />}
-      </div>
+      <li className='listItem'>
+        <a
+          href='#'
+          onClick={this.handleOpenMenu}
+          className={activeClass}
+        >
+          {title}
+        </a>
+        { isActive && <Menu menuList={menu} /> }
+      </li>
     );
   }
 }
