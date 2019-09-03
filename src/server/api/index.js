@@ -4,17 +4,14 @@ import koaBody from 'koa-body'
 
 const parseBody = koaBody()
 
-export const apiRouter = new Router({ prefix: '/api' })
+export const apiRouter = new Router({ prefix: '/sport-news' })
 
 export function setApiRoutes() {
   apiRouter.stack.length = 0
 
   apiRouter
-    .all('ping', '/ping', parseBody, (ctx) => {
-      ctx.response.body = { pong: ctx.request.body }
-    })
-    .get('bar', '/bar', (ctx) => {
-      ctx.response.body = { bar: [ 'lorem', 'ipsum', 'dolor', 'sit', 'amet' ] }
+    .all('register', '/register', parseBody, (ctx) => {
+      ctx.response.body = 'Registration'
     })
     .all('not-found', '*', (ctx) => {
       ctx.response.status = 404
