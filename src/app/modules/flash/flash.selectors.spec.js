@@ -1,13 +1,13 @@
-import fixtures from 'helpers/fixtures'
-import * as flashSelectors from './flash.selectors'
+import fixtures from 'helpers/fixtures';
+import * as flashSelectors from './flash.selectors';
 
 describe('Flash Selectors', function () {
   describe('getMessages()', () => {
     it('returns an empty array by default', () => {
       expect(
         flashSelectors.getMessages(null)
-      ).to.be.an('array').with.length(0)
-    })
+      ).to.be.an('array').with.length(0);
+    });
 
     it('returns the flash messages', () => {
       const state = {
@@ -20,17 +20,17 @@ describe('Flash Selectors', function () {
             'addRandomMessage',
           ),
         },
-      }
-      expect(flashSelectors.getMessages(state)).to.eql(state.flash.messages)
-    })
-  })
+      };
+      expect(flashSelectors.getMessages(state)).to.eql(state.flash.messages);
+    });
+  });
 
   describe('getNextMessage()', () => {
     it('returns undefined by default', () => {
       expect(
         flashSelectors.getNextMessage(null)
-      ).to.eql(undefined)
-    })
+      ).to.eql(undefined);
+    });
 
     it('returns the flash message start of list', () => {
       const state = {
@@ -43,10 +43,10 @@ describe('Flash Selectors', function () {
             'addRandomMessage',
           ),
         },
-      }
+      };
       expect(
         flashSelectors.getNextMessage(state)
-      ).to.eql(state.flash.messages[0])
-    })
-  })
-})
+      ).to.eql(state.flash.messages[0]);
+    });
+  });
+});

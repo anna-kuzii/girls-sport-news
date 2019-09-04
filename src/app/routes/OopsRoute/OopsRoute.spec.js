@@ -1,12 +1,12 @@
-import React from 'react'
-import OopsRoute from './OopsRoute'
+import React from 'react';
+import OopsRoute from './OopsRoute';
 
 describe(`OopsRoute Component`, function () {
-  helpers.setupSnapshots(__filename)
+  helpers.setupSnapshots(__filename);
 
   it(`matches snapshot`, () => {
     expect(
       snap(shallow(<OopsRoute />))
-    ).to.matchSnapshot()
-  })
-})
+    ).to.matchSnapshot();
+  });
+});

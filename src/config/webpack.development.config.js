@@ -1,6 +1,6 @@
-import MiniCssExtractPlugin from 'mini-css-extract-plugin'
-import webpackConfig, { babelLoaderConfig } from 'config/webpack.base.config'
-import { SRC } from 'config/paths'
+import MiniCssExtractPlugin from 'mini-css-extract-plugin';
+import webpackConfig, { babelLoaderConfig } from 'config/webpack.base.config';
+import { SRC } from 'config/paths';
 
 export default {
   ...webpackConfig,
@@ -55,4 +55,4 @@ export default {
       },
     ],
   },
-}
+};

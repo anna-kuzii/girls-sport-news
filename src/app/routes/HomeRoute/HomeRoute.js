@@ -1,6 +1,6 @@
-import React from 'react'
-import DocumentMeta from 'react-helmet'
-import { homeRoute as homeRouteCopy } from 'app/copy'
+import React from 'react';
+import DocumentMeta from 'react-helmet';
+import { homeRoute as homeRouteCopy } from 'app/copy';
 
 export default class HomeRoute extends React.Component {
   render() {
@@ -13,6 +13,6 @@ export default class HomeRoute extends React.Component {
           {homeRouteCopy.content}
         </section>
       </>
-    )
+    );
   }
 }

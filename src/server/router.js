@@ -1,16 +1,16 @@
-import Router from 'koa-router'
-import compose from 'koa-compose'
-import { ConfigService } from 'app/utils'
+import Router from 'koa-router';
+import compose from 'koa-compose';
+import { ConfigService } from 'app/utils';
 
-const log = debug('server-router')
+const log = debug('server-router');
 
-export const rootRouter = new Router()
+export const rootRouter = new Router();
 
 export async function setRoutes(assets) {
-  log('rebuilding route middleware')
-  rootRouter.stack.length = 0
+  log('rebuilding route middleware');
+  rootRouter.stack.length = 0;
 
-  ConfigService.setEnv(process.env.CONFIG_ENV)
+  ConfigService.setEnv(process.env.CONFIG_ENV);
 
   const renderReactApp = compose([
     /* set a store for server side state rendering */
@@ -18,19 +18,21 @@ export async function setRoutes(assets) {
     /* wire up flashMessages from redirect to server store */
     require('server/middleware/flash-messages').default,
     /* map assets from bundle to ctx fo html */
-    require('server/middleware/map-assets').default(assets),
+    require('server/middleware/map-assets')
+      .default(assets),
     /* set response body from react app */
-    require('server/middleware/render-app').default(),
-  ])
+    require('server/middleware/render-app')
+      .default(),
+  ]);
 
-  const { apiRouter, setApiRoutes } = require('server/api')
+  const { apiRouter, setApiRoutes } = require('server/api');
 
-  setApiRoutes()
+  setApiRoutes();
 
   rootRouter
     .use(apiRouter.routes())
     /* render error page when problem found */
     .get('error', '/oops', renderReactApp)
     /* render react app for all other routes */
-    .get('react', '/(.*)', renderReactApp)
+    .get('react', '/(.*)', renderReactApp);
 }

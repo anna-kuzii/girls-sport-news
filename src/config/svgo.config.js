@@ -1,4 +1,4 @@
-const ENABLED = true
+const ENABLED = true;
 
 export default {
   plugins: [
@@ -40,4 +40,4 @@ export default {
     { addClassesToSVGElement: false },
     { removeStyleElement: false },
   ],
-}
+};

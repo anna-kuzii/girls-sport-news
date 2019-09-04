@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 export const app = {
   loading: `Loading...`,
@@ -7,13 +7,13 @@ export const app = {
     description: `A boilerplate for building universal react applications`,
     keywords: `react,redux,react-router,koa,universal,babel,webpack`,
   },
-}
+};
 
 export const nav = {
   home: `Home`,
   bar: `Bar`,
   private: `Admin`,
-}
+};
 
 export const homeRoute = {
   content: (
@@ -24,7 +24,7 @@ export const homeRoute = {
       <p>The server routes also auto update on changes!</p>
     </>
   ),
-}
+};
 
 export const barRoute = {
   documentTitle: `Bar`,
@@ -34,7 +34,7 @@ export const barRoute = {
       <p>API request to the <code>/api/bar</code> endpoint.</p>
     </>
   ),
-}
+};
 
 export const privateRoute = {
   documentTitle: `Confidential`,
@@ -45,7 +45,7 @@ export const privateRoute = {
       <p>You may not view the private route!</p>
     </>
   ),
-}
+};
 
 export const notFoundRoute = {
   documentTitle: `Doesn't exist`,
@@ -55,7 +55,7 @@ export const notFoundRoute = {
       <p>Page not found!</p>
     </>
   ),
-}
+};
 
 export const oopsRoute = {
   documentTitle: `Oopsies`,
@@ -67,4 +67,4 @@ export const oopsRoute = {
       <p>Your developers and managers should change this page :)</p>
     </>
   ),
-}
+};
