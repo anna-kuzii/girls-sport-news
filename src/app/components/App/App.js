@@ -3,9 +3,7 @@ import DocumentMeta from 'react-helmet';
 import { hot } from 'react-hot-loader/root';
 import { app as appCopy } from 'app/copy';
 import { Registration } from '../Registration';
-// import { Menu } from '../Menu';
-import { MenuMobile } from '../Menu/MenuMobile';
-import data from '../../../assets/data/menu-items.json';
+import { Menu } from '../Menu';
 
 class App extends React.Component {
   render() {
@@ -25,7 +23,7 @@ class App extends React.Component {
           />
         </DocumentMeta>
         <Registration />
-        <MenuMobile title='HOME' menuList={data.menu} />
+        <Menu />
       </>
     );
   }

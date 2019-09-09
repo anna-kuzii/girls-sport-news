@@ -1,42 +1,42 @@
 import React, { Component } from 'react';
-import { MenuItem } from './MenuItem';
+import { Menu } from './Menu';
 import './style.scss';
 
-export class Menu extends Component {
+export class MenuDesktop extends Component {
   constructor(props) {
     super(props);
-
-    this.state = {
-      activeIndex: -1,
-    };
   }
 
-  setActiveItem = (index) => {
-    this.setState((prevState) => ({
-      ...prevState,
-      activeIndex: prevState.activeIndex === index ? -1 : index,
-    }));
+  componentDidMount() {
+    document.addEventListener('mousedown', this.handleClickOutside);
+  }
+
+  componentWillUnmount() {
+    document.removeEventListener('mousedown', this.handleClickOutside);
+  }
+
+  setWrapperRef = (node) => {
+    this.wrapperRef = node;
   };
 
+  handleClickOutside = (event) => {
+    const { menuList } = this.props;
+    if (this.wrapperRef && !this.wrapperRef.contains(event.target)) {
+      this.renderMenuDesktop(menuList);
+    }
+  };
 
-  render() {
-    const { menuList } = this.props,
-      { activeIndex } = this.state;
-
+  renderMenuDesktop = (menuList) => {
     return (
-      <div className='desktopMenuContainer'>
-        <ul className='listContainer'>
-          {menuList.map((item, index) => (
-            <MenuItem
-              item={item}
-              index={index}
-              key={item.id}
-              activeItem={activeIndex}
-              setActiveItem={this.setActiveItem}
-            />
-          ))}
-        </ul>
+      <div ref={this.setWrapperRef}>
+        <Menu menuList={menuList} opened={false} />
       </div>
     );
+  };
+
+  render() {
+    const { menuList } = this.props;
+    return this.renderMenuDesktop(menuList);
   }
 }
+

@@ -14,10 +14,11 @@ export class MenuItemMobile extends Component {
   };
 
   render() {
-    const { item: { title, menu } } = this.props;
+    const { item: { title, menu } } = this.props,
+      hasSubMenu = menu ? 'subMenu' : '';
 
     return (
-      <li className='listItem'>
+      <li className={`listItem ${hasSubMenu}`}>
         <a
           href='#'
           onClick={menu && this.handleOpenMenu}

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { MenuItemMobile } from './MenuItemMobile';
+import './style.scss';
 
 export class MenuMobile extends Component {
   constructor(props) {
@@ -12,6 +13,7 @@ export class MenuMobile extends Component {
       activeItemSubMenu: menuList,
       numberOfStep: 0,
       arrayOfStates: [],
+      menuIsOpen: true,
     };
   }
 
@@ -25,6 +27,13 @@ export class MenuMobile extends Component {
       numberOfStep: prevState.numberOfStep + 1,
       activeItemTitle: title,
       activeItemSubMenu: submenu,
+    }));
+  };
+
+  handleCloseMenu = () => {
+    this.setState((prevState) => ({
+      ...prevState,
+      menuIsOpen: !prevState.menuIsOpen,
     }));
   };
 
@@ -46,11 +55,13 @@ export class MenuMobile extends Component {
   };
 
   renderMenu = (title, submenu) => {
-    const { numberOfStep } = this.state,
-      firstList = numberOfStep ? '' : 'mainList';
+    const { numberOfStep, menuIsOpen } = this.state,
+      firstList = numberOfStep ? '' : 'mainList',
+      stateOfMenu = menuIsOpen ? 'openedMenu' : '';
 
     return (
-      <div className='mobileMenu'>
+      <div className={`mobileMenu ${stateOfMenu}`}>
+        <div className='closeButton' onClick={this.handleCloseMenu} />
         {numberOfStep ? <div className='backButton' onClick={this.handleBackToPreviousMenu}>Back button</div> : ''}
         <div className={`menuWrapper ${firstList}`}>
           <div className='title'>{title}</div>
@@ -67,7 +78,7 @@ export class MenuMobile extends Component {
         </div>
       </div>
     );
-  }
+  };
 
   render() {
     const { activeItemTitle, activeItemSubMenu } = this.state;
