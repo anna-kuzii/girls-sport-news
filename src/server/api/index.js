@@ -4,14 +4,14 @@ import koaBody from 'koa-body';
 
 const parseBody = koaBody();
 
-export const apiRouter = new Router({ prefix: '/sport-news' })
+export const apiRouter = new Router({ prefix: '/sport-news' });
 
 export function setApiRoutes() {
   apiRouter.stack.length = 0;
 
   apiRouter
     .all('register', '/register', parseBody, (ctx) => {
-      ctx.response.body = 'Registration'
+      ctx.response.body = 'Registration';
     })
     .all('not-found', '*', (ctx) => {
       ctx.response.status = 404;
