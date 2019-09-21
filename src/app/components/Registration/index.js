@@ -26,6 +26,7 @@ export class Registration extends Component {
 
   handleChange = (event) => {
     const { name, value } = event.target;
+    const { errors } = this.state;
 
     switch (name) {
       case 'firstName':
@@ -39,7 +40,7 @@ export class Registration extends Component {
             },
           }));
         }
-        else {
+        else if (!errors.firstName) {
           this.setState((prevObject) => ({
             ...prevObject,
             errors: {
@@ -60,7 +61,7 @@ export class Registration extends Component {
             },
           }));
         }
-        else {
+        else if (!errors.lastName) {
           this.setState((prevObject) => ({
             ...prevObject,
             errors: {
@@ -81,7 +82,7 @@ export class Registration extends Component {
             },
           }));
         }
-        else {
+        else if (!errors.email) {
           this.setState((prevObject) => ({
             ...prevObject,
             errors: {
@@ -102,7 +103,7 @@ export class Registration extends Component {
             },
           }));
         }
-        else {
+        else if (!errors.password) {
           this.setState((prevObject) => ({
             ...prevObject,
             errors: {
@@ -116,7 +117,7 @@ export class Registration extends Component {
   }
 
   nameIsValid = (name) => {
-    return name.length > 3;
+    return name.length >= 3;
   }
 
   emailIsValid = (email) => {
@@ -130,7 +131,13 @@ export class Registration extends Component {
   }
 
   render() {
-    const { errors } = this.state;
+    const { firstName, lastName, email, password, errors } = this.state,
+      fNameError = errors.firstName ? 'error' : '',
+      lNameError = errors.lastName ? 'error' : '',
+      emailError = errors.email ? 'error' : '',
+      passError = errors.password ? 'error' : '',
+      buttonState = !(firstName && lastName && email && password);
+
     return (
       <Container className='registrationWrapper formWrapper'>
         <h1>Create Account</h1>
@@ -143,7 +150,7 @@ export class Registration extends Component {
             <legend>OR use your email for registration:</legend>
             <Row>
               <Col
-                className='inputItem'
+                className={`inputItem ${fNameError}`}
                 md={6}
                 xs={12}
               >
@@ -159,7 +166,7 @@ export class Registration extends Component {
                 <div className='error-messages'>{errors.firstName}</div>
               </Col>
               <Col
-                className='inputItem'
+                className={`inputItem ${lNameError}`}
                 md={6}
                 xs={12}
               >
@@ -176,7 +183,10 @@ export class Registration extends Component {
               </Col>
             </Row>
             <Row>
-              <Col xs={12} className='inputItem'>
+              <Col
+                xs={12}
+                className={`inputItem ${emailError}`}
+              >
                 <label htmlFor='email'>Email</label>
                 <input
                   type='email'
@@ -188,7 +198,10 @@ export class Registration extends Component {
                 />
                 <div className='error-messages'>{errors.email}</div>
               </Col>
-              <Col xs={12} className='inputItem'>
+              <Col
+                xs={12}
+                className={`inputItem ${passError}`}
+              >
                 <label htmlFor='password'>Password</label>
                 <input
                   type='password'
@@ -201,11 +214,15 @@ export class Registration extends Component {
                 />
                 <div className='error-messages'>{errors.password}</div>
               </Col>
-              <Col xs={12} className='inputItem'>
+              <Col
+                xs={12}
+                className='inputItem'
+              >
                 <input
                   name='submit'
                   type='submit'
                   value='Sign up'
+                  disabled={buttonState}
                 />
               </Col>
             </Row>
