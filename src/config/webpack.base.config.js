@@ -1,12 +1,12 @@
-import webpack from 'webpack'
-import MiniCssExtractPlugin from 'mini-css-extract-plugin'
-import { CleanWebpackPlugin } from 'clean-webpack-plugin'
-import LoadablePlugin from '@loadable/webpack-plugin'
+import webpack from 'webpack';
+import MiniCssExtractPlugin from 'mini-css-extract-plugin';
+import { CleanWebpackPlugin } from 'clean-webpack-plugin';
+import LoadablePlugin from '@loadable/webpack-plugin';
 import {
   SRC, APP, STATIC, CONFIG, STYLES, SERVER, LOADABLE_FILE_NAME,
-} from 'config/paths'
-import svgoConfig from 'config/svgo.config'
-import { isomorphicPlugin } from 'server/isomorphic-tools'
+} from 'config/paths';
+import svgoConfig from 'config/svgo.config';
+import { isomorphicPlugin } from 'server/isomorphic-tools';
 
 export default {
   entry: {
@@ -98,7 +98,7 @@ export default {
       },
     ],
   },
-}
+};
 
 export const babelLoaderConfig = {
   test: /\.jsx?$/,
@@ -131,4 +131,4 @@ export const babelLoaderConfig = {
       } ],
     ],
   },
-}
+};

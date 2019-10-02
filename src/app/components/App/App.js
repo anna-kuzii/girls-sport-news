@@ -1,9 +1,10 @@
-import React from 'react'
-import DocumentMeta from 'react-helmet'
-import { hot } from 'react-hot-loader/root'
-import { app as appCopy } from 'app/copy'
-import { Registration } from '../Registration'
-
+import React from 'react';
+import DocumentMeta from 'react-helmet';
+import { hot } from 'react-hot-loader/root';
+import { app as appCopy } from 'app/copy';
+import { Registration } from '../Registration';
+import { Menu } from '../Menu';
+import data from '../../../assets/data/menu-items.json';
 
 class App extends React.Component {
   render() {
@@ -23,9 +24,10 @@ class App extends React.Component {
           />
         </DocumentMeta>
         <Registration />
+        <Menu menuList={data.menu} />
       </>
-    )
+    );
   }
 }
 
-export default hot(App)
+export default hot(App);

@@ -1,9 +1,9 @@
-import 'config/environment'
-import 'helpers/clean-asset-json'
-import webpack from 'webpack'
-import MiniCssExtractPlugin from 'mini-css-extract-plugin'
-import webpackConfig, { babelLoaderConfig } from 'config/webpack.base.config'
-import { APP, STYLES } from 'config/paths'
+import 'config/environment';
+import 'helpers/clean-asset-json';
+import webpack from 'webpack';
+import MiniCssExtractPlugin from 'mini-css-extract-plugin';
+import webpackConfig, { babelLoaderConfig } from 'config/webpack.base.config';
+import { APP, STYLES } from 'config/paths';
 
 export default {
   ...webpackConfig,
@@ -48,4 +48,4 @@ export default {
       },
     ],
   },
-}
+};

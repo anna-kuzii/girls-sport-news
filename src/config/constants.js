@@ -1,2 +1,2 @@
 
-export const CONTAINER_ELEMENT_ID = 'app-container'
+export const CONTAINER_ELEMENT_ID = 'app-container';

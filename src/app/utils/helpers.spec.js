@@ -1,4 +1,4 @@
-import { compact, cleanProps, addKeyAsProperty, secondArg } from './helpers'
+import { compact, cleanProps, addKeyAsProperty, secondArg } from './helpers';
 
 describe('compact()', function () {
   it('removes falsey values from an array', () => {
@@ -17,7 +17,7 @@ describe('compact()', function () {
       'false',
       '0',
       NaN,
-    ]
+    ];
     const expected = [
       true,
       [],
@@ -26,10 +26,10 @@ describe('compact()', function () {
       -1,
       'false',
       '0',
-    ]
-    const actual = compact(messyArray)
-    expect(actual).to.eql(expected)
-  })
+    ];
+    const actual = compact(messyArray);
+    expect(actual).to.eql(expected);
+  });
 
   it('removes false values from an object', () => {
     const messyObject = {
@@ -48,7 +48,7 @@ describe('compact()', function () {
       yok: 'false',
       yeee: '0',
       november: NaN,
-    }
+    };
     const expected = {
       yes: true,
       yar: [],
@@ -57,11 +57,11 @@ describe('compact()', function () {
       yessir: -1,
       yok: 'false',
       yeee: '0',
-    }
-    const actual = compact(messyObject)
-    expect(actual).to.eql(expected)
-  })
-})
+    };
+    const actual = compact(messyObject);
+    expect(actual).to.eql(expected);
+  });
+});
 
 describe(`cleanProps()`, function () {
   it(`only sets valid HTML attributes`, () => {
@@ -80,7 +80,7 @@ describe(`cleanProps()`, function () {
       bsFunction: () => {},
       style: 'false',
       '0': '0',
-    }
+    };
     const expected = {
       htmlFor: true,
       role: false,
@@ -89,25 +89,25 @@ describe(`cleanProps()`, function () {
       type: [],
       onClick: `() => {} can't assert functions are deep.equal`,
       style: 'false',
-    }
-    const actual = cleanProps(messyObject)
+    };
+    const actual = cleanProps(messyObject);
     _.forEach(expected, (val, key) => {
-      expect(actual).to.have.property(key).which.eql(val)
-    })
-  })
+      expect(actual).to.have.property(key).which.eql(val);
+    });
+  });
 
   describe(`addKeyAsProperty()`, () => {
     it(`returns a function`, () => {
-      expect(addKeyAsProperty()).to.be.a('function')
-    })
+      expect(addKeyAsProperty()).to.be.a('function');
+    });
 
     it(`returns a new object with the key as a named property`, () => {
-      const namedProperty = 'title'
+      const namedProperty = 'title';
       const objectToTest = {
         firstKey: {},
         secondKey: { foo: 'bar' },
-      }
-      const addTitleAsPropFromKey = addKeyAsProperty(namedProperty)
+      };
+      const addTitleAsPropFromKey = addKeyAsProperty(namedProperty);
 
       expect(
         addTitleAsPropFromKey(objectToTest)
@@ -119,16 +119,16 @@ describe(`cleanProps()`, function () {
           ...objectToTest.secondKey,
           [namedProperty]: 'secondKey',
         },
-      })
-    })
+      });
+    });
 
     it(`doesn't overwrite existing properties with name`, () => {
-      const namedProperty = 'id'
+      const namedProperty = 'id';
       const objectToTest = {
         firstKey: {},
         someKey: { [namedProperty]: `isn't overwritten` },
-      }
-      const addIdAsPropFromKey = addKeyAsProperty(namedProperty)
+      };
+      const addIdAsPropFromKey = addKeyAsProperty(namedProperty);
       expect(
         addIdAsPropFromKey(objectToTest)
       ).to.eql({
@@ -138,21 +138,21 @@ describe(`cleanProps()`, function () {
         someKey: {
           ...objectToTest.someKey,
         },
-      })
-    })
-  })
+      });
+    });
+  });
 
   describe(`secondArg()`, () => {
     it(`returns second argument on call`, () => {
-      expect(secondArg('first', 'second', 'third')).to.equal('second')
-    })
+      expect(secondArg('first', 'second', 'third')).to.equal('second');
+    });
 
     it(`returns undefined on just one argument`, () => {
-      expect(secondArg(1)).to.equal(undefined)
-    })
+      expect(secondArg(1)).to.equal(undefined);
+    });
 
     it(`returns undefined on call without arguments`, () => {
-      expect(secondArg()).to.equal(undefined)
-    })
-  })
-})
+      expect(secondArg()).to.equal(undefined);
+    });
+  });
+});

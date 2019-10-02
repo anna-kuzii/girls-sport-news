@@ -23,10 +23,6 @@
     }
   }
 
-  .inputItem {
-    margin-bottom: 20px;
-  }
-
   legend {
     font-family: $sans-regular;
     font-size: 12px;
@@ -90,6 +86,30 @@
       text-transform: uppercase;
       background: $alizarin-crimson;
       border: 0;
+
+      &:disabled {
+        background: $aluminium;
+      }
+    }
+  }
+
+  .error-messages {
+    padding-top: 5px;
+    font-size: 10px;
+    color: $alizarin-crimson;
+  }
+
+  .inputItem {
+    margin-bottom: 20px;
+
+    &.error {
+      input {
+        position: relative;
+        padding-right: 25px;
+        background: url('../assets/error.png') no-repeat 95% 50%;
+        background-size: 10px 10px;
+        border: 1px solid $alizarin-crimson;
+      }
     }
   }
 }

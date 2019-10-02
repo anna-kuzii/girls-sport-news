@@ -1,2 +1,2 @@
 
-export const API_FETCH = 'bar/API_FETCH'
+export const API_FETCH = 'bar/API_FETCH';

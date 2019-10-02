@@ -1,12 +1,19 @@
-export const registrationMail = {
-  from: 'girls.sport.news@gmail.com',
-  to: 'akuzii@softserveinc.com',
-  subject: 'Success registration',
-  html: `<table style="border-collapse: collapse; background: #f9f9fb; position: absolute; width: 100%; right: 50%; transform: translateX(50%); border-bottom: 50px solid #f9f9fb;">
+import { getMonth } from '../../helpers/getMonth';
+
+export const registrationMail = (userEmail) => {
+  const currentDate = new Date().getDate();
+  const currentMonth = getMonth(new Date().getMonth());
+  const currentYear = new Date().getFullYear();
+
+  return {
+    from: process.env.EMAIL,
+    to: userEmail,
+    subject: 'Success registration',
+    html: `<table style="border-collapse: collapse; background: #f9f9fb; position: absolute; width: 100%; right: 50%; transform: translateX(50%); border-bottom: 50px solid #f9f9fb;">
         <thead>
         <tr>
             <td colspan="3" style="font-family: Open Sans; font-weight: 600; font-size: 24px; line-height: 33px; text-align: center; padding: 50px 0;">
-                Hello! You have successfully registered to Sport News <br /> March 21, 2019\n' +
+                Hello! You have successfully registered to Sport News <br /> ${currentMonth} ${currentDate}, ${currentYear}
             </td>
         </tr>
         </thead>
@@ -36,4 +43,4 @@ export const registrationMail = {
         </tr>
         </tbody>
     </table>`
-}
+}}

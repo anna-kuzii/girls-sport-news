@@ -17,9 +17,7 @@
       "version": "16.5"
     }
   },
-  "extends": [
-    "plugin:jsx-a11y/recommended"
-  ],
+  "extends": "eslint:recommended",
   "rules": {
     "array-bracket-spacing": [2, "always"],
     "comma-dangle": [1, "always-multiline"],
@@ -96,7 +94,7 @@
       "prop": "parens-new-line"
     }],
     "require-yield": 0,
-    "semi": [2, "never"],
+    "semi": [2, "always"],
     "space-before-blocks": [2, "always"],
     "space-before-function-paren": ["error", {
       "anonymous": "always",

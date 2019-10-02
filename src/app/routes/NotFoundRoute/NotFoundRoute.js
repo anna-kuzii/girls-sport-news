@@ -1,6 +1,6 @@
-import React from 'react'
-import DocumentMeta from 'react-helmet'
-import { notFoundRoute as notFoundRouteCopy } from 'app/copy'
+import React from 'react';
+import DocumentMeta from 'react-helmet';
+import { notFoundRoute as notFoundRouteCopy } from 'app/copy';
 
 export default class NotFoundRoute extends React.Component {
   render() {
@@ -13,6 +13,6 @@ export default class NotFoundRoute extends React.Component {
           {notFoundRouteCopy.content}
         </section>
       </>
-    )
+    );
   }
 }

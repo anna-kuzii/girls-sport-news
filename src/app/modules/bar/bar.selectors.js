@@ -1,3 +1,3 @@
-import { get } from 'app/utils'
+import { get } from 'app/utils';
 
-export const getBar = get('bar.data', [])
+export const getBar = get('bar.data', []);

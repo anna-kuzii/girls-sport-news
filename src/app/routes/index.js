@@ -1,5 +1,5 @@
-import loadable from '@loadable/component'
-import { addKeyAsProperty } from 'app/utils'
+import loadable from '@loadable/component';
+import { addKeyAsProperty } from 'app/utils';
 
 export const routesMap = addKeyAsProperty('name')({
   home: {
@@ -22,6 +22,6 @@ export const routesMap = addKeyAsProperty('name')({
   notFound: {
     component: loadable(() => import('./NotFoundRoute/NotFoundRoute')),
   },
-})
+});
 
-export const routesList = Object.values(routesMap)
+export const routesList = Object.values(routesMap);

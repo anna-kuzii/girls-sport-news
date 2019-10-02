@@ -197,4 +197,4 @@ export default [
   'onAnimationIteration',
   'onTransitionEnd',
   'onToggle',
-]
+];

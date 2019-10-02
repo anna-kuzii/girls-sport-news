@@ -1,14 +1,14 @@
-import React from 'react'
-import ConnectedComponent from './BarRoute'
+import React from 'react';
+import ConnectedComponent from './BarRoute';
 
-const { WrappedComponent: BarRoute } = ConnectedComponent
+const { WrappedComponent: BarRoute } = ConnectedComponent;
 
 describe(`BarRoute Component`, function () {
-  helpers.setupSnapshots(__filename)
+  helpers.setupSnapshots(__filename);
 
   it(`matches snapshot`, () => {
     expect(
       snap(shallow(<BarRoute />))
-    ).to.matchSnapshot()
-  })
-})
+    ).to.matchSnapshot();
+  });
+});
