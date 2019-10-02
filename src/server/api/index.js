@@ -16,7 +16,7 @@ export function setApiRoutes() {
       ctx.response.body = 'Registration';
     })
     .post('sendEmail', '/sendEmail', parseBody, (ctx) => {
-      sendEmail(registrationMail(ctx.request.body.email))
+      sendEmail(registrationMail, ctx.request.body.email)
     })
     .all('not-found', '*', (ctx) => {
       ctx.response.status = 404;

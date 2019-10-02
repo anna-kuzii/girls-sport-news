@@ -1,7 +1,8 @@
 const nodemailer = require('nodemailer');
 
-export default async function sendEmail(emailTempate) {
-  let transporter = nodemailer.createTransport({
+export default async function sendEmail(emailTempate, userEmail) {
+  const { subject, html } = emailTempate();
+  const transporter = nodemailer.createTransport({
     host: "smtp.gmail.com",
     port: 465,
     secure: true,
@@ -11,6 +12,12 @@ export default async function sendEmail(emailTempate) {
     }
   });
 
-  await transporter.sendMail(emailTempate);
+
+  await transporter.sendMail({
+    from: process.env.EMAIL,
+    to: userEmail,
+    subject,
+    html
+  });
 }
 
