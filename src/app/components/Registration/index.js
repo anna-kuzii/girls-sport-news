@@ -5,7 +5,6 @@ import facebookIcon from './assets/facebook-icon.svg';
 import twitterIcon from './assets/twitter-icon.svg';
 import SVG from 'react-inlinesvg';
 
-
 export class Registration extends Component {
   constructor(props) {
     super(props);
