@@ -1,6 +1,8 @@
 import { getMonth } from '../../helpers/getMonth';
 
-export const registrationMail = () => {
+import { IEmailsObj } from '../data.model';
+
+export const registrationMail = (): IEmailsObj => {
   const currentDate = new Date().getDate();
   const currentMonth = getMonth(new Date().getMonth());
   const currentYear = new Date().getFullYear();
@@ -40,5 +42,6 @@ export const registrationMail = () => {
             <td style="background: #f9f9fb; width: calc(100% / 3)"></td>
         </tr>
         </tbody>
-    </table>`
-}}
+    </table>`,
+  };
+};

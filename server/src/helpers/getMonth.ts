@@ -1,3 +1,3 @@
 const months = [ 'January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December' ];
 
-export const getMonth = (month) => months[month];
+export const getMonth = (month: number): string => months[month];

@@ -1,8 +1,8 @@
 import { STATUS_CODES } from 'http';
 import Router from 'koa-router';
 import koaBody from 'koa-body';
-import { registrationMail } from '../data/emails/registration';
-import sendEmail from '../helpers/sendEmail';
+// import { registrationMail } from '../../../server/src/data/emails/registration';
+// import sendEmail from '../../../server/src/helpers/sendEmail';
 
 const parseBody = koaBody();
 
@@ -16,7 +16,7 @@ export function setApiRoutes() {
       ctx.response.body = 'Registration';
     })
     .post('sendEmail', '/sendEmail', parseBody, (ctx) => {
-      sendEmail(registrationMail, ctx.request.body.email)
+      // sendEmail(registrationMail, ctx.request.body.email)
     })
     .all('not-found', '*', (ctx) => {
       ctx.response.status = 404;

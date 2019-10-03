@@ -10,6 +10,8 @@ import app from 'server-instance';
 
 const log = debug('app');
 
+console.log("uuuu")
+
 if (isEnv('development')) {
   isomorphicPlugin.development();
   require('helpers/hot-reload').default(app);
