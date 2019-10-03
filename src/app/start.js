@@ -30,7 +30,9 @@ run()
 
   log(`Mounting onto #${CONTAINER_ELEMENT_ID}`);
 
-  ReactDOM.hydrate(
+  const renderMethod = module.hot ? ReactDOM.render : ReactDOM.hydrate;
+
+  renderMethod(
     Main(store, history, ConnectedRouter),
     document.getElementById(CONTAINER_ELEMENT_ID)
   );

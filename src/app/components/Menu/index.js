@@ -1,41 +1,22 @@
 import React, { Component } from 'react';
-import { MenuItem } from './MenuItem';
-import './style.scss';
+import { MenuDesktop } from './MenuDesktop';
+import { MenuMobile } from './MenuMobile';
+import data from '../../../assets/data/menu-items.json';
+import Responsive from 'react-responsive';
 
 export class Menu extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      activeIndex: -1,
-    };
-  }
-
-  setActiveItem = (index) => {
-    this.setState((prevState) => ({
-      ...prevState,
-      activeIndex: prevState.activeIndex === index ? -1 : index,
-    }));
-  };
-
-
   render() {
-    const { menuList } = this.props,
-      { activeIndex } = this.state;
+    const Desktop = props => <Responsive {...props} minWidth={768} />;
+    const Mobile = props => <Responsive {...props} maxWidth={767} />;
 
     return (
-      <div className='desktopMenuContainer'>
-        <ul className='listContainer'>
-          {menuList.map((item, index) => (
-            <MenuItem
-              item={item}
-              index={index}
-              key={item.id}
-              activeItem={activeIndex}
-              setActiveItem={this.setActiveItem}
-            />
-          ))}
-        </ul>
+      <div>
+        <Desktop>
+          <MenuDesktop menuList={data.menu} />
+        </Desktop>
+        <Mobile>
+          <MenuMobile title='Home' menuList={data.menu} />
+        </Mobile>
       </div>
     );
   }

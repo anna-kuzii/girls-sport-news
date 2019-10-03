@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Menu } from '../../Menu';
+import { MenuDesktop } from '../index';
 import '../style.scss';
 
 export class MenuItem extends Component {
@@ -29,7 +29,7 @@ export class MenuItem extends Component {
         >
           {title}
         </a>
-        { isActive && <Menu menuList={menu} /> }
+        { isActive && <MenuDesktop menuList={menu} /> }
       </li>
     );
   }
