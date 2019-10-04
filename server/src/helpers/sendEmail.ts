@@ -1,5 +1,5 @@
-import * as nodemailer from 'nodemailer';
-
+import nodemailer from 'nodemailer';
+import appConfig from '../configs/app.config';
 import { IEmailsObj } from '../data/data.model';
 
 export default async (emailTempate: () => IEmailsObj, userEmail: string): Promise<void> => {
@@ -9,13 +9,13 @@ export default async (emailTempate: () => IEmailsObj, userEmail: string): Promis
     port: 465,
     secure: true,
     auth: {
-      user: process.env.EMAIL,
-      pass: process.env.PASSPORT,
+      user: appConfig.EMAIL,
+      pass: appConfig.PASSPORT,
     },
   });
 
   await transporter.sendMail({
-    from: process.env.EMAIL,
+    from: appConfig.EMAIL,
     to: userEmail,
     subject,
     html,

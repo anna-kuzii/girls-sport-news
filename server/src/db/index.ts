@@ -1,7 +1,8 @@
-import * as mongoose from 'mongoose';
+import mongoose from 'mongoose';
+import appConfig from '../configs/app.config';
 
 mongoose
-  .connect(process.env.DATABASE_URL)
+  .connect(String(appConfig.DATABASE_URL))
   .then(
     (): void => {
       // console.log('Successfully connected');
