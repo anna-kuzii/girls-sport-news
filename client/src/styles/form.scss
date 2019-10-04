@@ -1,0 +1,115 @@
+@import 'vars';
+
+.formWrapper {
+
+  &.container {
+    max-width: 390px;
+
+    @media screen and (max-width: $max-mobile-width) {
+      max-width: 100%;
+      background-color: $black;
+    }
+  }
+
+  h1 {
+    margin-bottom: 20px;
+    font-family: $sans-bold;
+    font-size: 24px;
+    line-height: 33px;
+    color: $black;
+
+    @media screen and (max-width: $max-mobile-width) {
+      color: $white;
+    }
+  }
+
+  legend {
+    font-family: $sans-regular;
+    font-size: 12px;
+    line-height: 16px;
+    color: $river-bed;
+
+    @media screen and (max-width: $max-mobile-width) {
+      color: $white;
+    }
+  }
+
+  label {
+    margin-bottom: 8px;
+    font-family: $roboto-regular;
+    font-size: 10px;
+    line-height: 11px;
+    letter-spacing: .9px;
+    color: $river-bed;
+    text-transform: uppercase;
+
+    @media screen and (max-width: $max-mobile-width) {
+      color: $white;
+    }
+  }
+
+  input {
+    &:not([type='submit']) {
+      width: 100%;
+      padding: 10px;
+      font-family: $sans-regular;
+      font-size: 12px;
+      line-height: 16px;
+      color: $black;
+      background-color: $white;
+      border: 1px solid $mischka;
+
+      // sass-lint:disable no-vendor-prefixes
+      &::-webkit-input-placeholder {
+        color: $ghost;
+      }
+
+      &:hover {
+        border: 1px solid $aluminium;
+      }
+
+      &:focus {
+        border: 1px solid $aluminium;
+        outline: none;
+      }
+    }
+
+    &[type='submit'] {
+      width: 100%;
+      padding: 15px 10px;
+      margin-top: 15px;
+      font-family: $roboto-bold;
+      font-size: 12px;
+      line-height: 14px;
+      letter-spacing: .8px;
+      color: $white;
+      text-transform: uppercase;
+      background: $alizarin-crimson;
+      border: 0;
+
+      &:disabled {
+        background: $aluminium;
+      }
+    }
+  }
+
+  .error-messages {
+    padding-top: 5px;
+    font-size: 10px;
+    color: $alizarin-crimson;
+  }
+
+  .inputItem {
+    margin-bottom: 20px;
+
+    &.error {
+      input {
+        position: relative;
+        padding-right: 25px;
+        background: url('../assets/error.png') no-repeat 95% 50%;
+        background-size: 10px 10px;
+        border: 1px solid $alizarin-crimson;
+      }
+    }
+  }
+}

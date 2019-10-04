@@ -1,0 +1,112 @@
+@import '../../../styles/vars';
+
+.mobileMenu {
+  position: fixed;
+  top: 0;
+  display: none;
+  width: 100%;
+  height: 100%;
+  padding: 50px;
+  overflow: auto;
+  background-color: $alizarin-crimson;
+
+  &.openedMenu {
+    display: block;
+  }
+
+  .closeButton {
+    width: 20px;
+    height: 20px;
+    margin-bottom: 20px;
+    cursor: pointer;
+    background: url('../../../assets/img/icon-close.png') no-repeat left;
+    background-size: 20px 20px;
+  }
+
+  .backButton {
+    position: relative;
+    padding-left: 15px;
+    margin-bottom: 20px;
+    font-family: $sans-regular;
+    font-size: 17px;
+    line-height: 22px;
+    color: $white;
+    cursor: pointer;
+
+    &::before {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      width: 8px;
+      height: 11px;
+      background: url('../../../assets/img/back-arrow.png');
+      background-size: 8px 11px;
+      content: '';
+      transform: translateY(-50%);
+    }
+  }
+
+  .menuWrapper {
+
+    ul {
+      padding: 0 0 0 20px;
+      margin: 0;
+      list-style-type: none;
+    }
+
+    li {
+      margin-bottom: 25px;
+
+      a {
+        font-family: $sans-regular;
+        font-size: 14px;
+        line-height: 19px;
+        color: $white;
+        text-decoration: none;
+      }
+
+      &.subMenu {
+        position: relative;
+
+        &::after {
+          position: absolute;
+          top: 50%;
+          width: 6px;
+          height: 8px;
+          margin-left: 15px;
+          background: url('../../../assets/img/Polygon.png');
+          background-size: 6px 8px;
+          content: '';
+          transform: translateY(-50%);
+        }
+      }
+    }
+
+    .title {
+      margin-bottom: 30px;
+      font-family: $sans-bold;
+      font-size: 18px;
+      font-weight: bold;
+      line-height: 19px;
+      color: $white;
+      text-decoration: none;
+    }
+  }
+
+  .mainList {
+
+    ul {
+      padding: 0;
+    }
+
+    li {
+      a {
+        font-family: $sans-bold;
+        font-size: 18px;
+        font-weight: bold;
+        line-height: 19px;
+        color: $gallery-79;
+      }
+    }
+  }
+}
