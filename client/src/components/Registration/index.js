@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import './style.scss';
-import facebookIcon from './assets/facebook-icon.svg';
-import twitterIcon from './assets/twitter-icon.svg';
+import facebookIcon from '../../assets/img/facebook-icon.svg';
+import twitterIcon from '../../assets/img/twitter-icon.svg';
 import SVG from 'react-inlinesvg';
 
 export class Registration extends Component {
