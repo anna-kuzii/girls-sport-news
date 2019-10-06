@@ -5,7 +5,7 @@ mongoose
   .connect(String(appConfig.DATABASE_URL))
   .then(
     (): void => {
-      // console.log('Successfully connected');
+      console.log('Successfully connected');
     },
     (err: string) => {
       throw err;

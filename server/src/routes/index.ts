@@ -16,6 +16,7 @@ apiRouter
     ctx.response.body = 'Registration';
   })
   .post('sendEmail', '/sendEmail', parseBody, (ctx: Koa.Context) => {
+    console.log("yyyyy", ctx.request.body)
     sendEmail(registrationMail, ctx.request.body.email);
   })
   .all('not-found', '*', (ctx: Koa.Context) => {
