@@ -1,0 +1,53 @@
+{
+  "name": "client",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "lint:js": "tslint -c tslint.json src/**/*.{ts,tsx}",
+    "lint:styles": "sass-lint --verbose -c .sass-lint.yml",
+    "lint": "npm run lint:js && npm run lint:styles"
+  },
+  "pre-push": [
+    "lint:js",
+    "lint:styles"
+  ],
+  "dependencies": {
+    "@types/jest": "^24.0.18",
+    "@types/node": "^12.7.11",
+    "@types/react": "^16.9.5",
+    "@types/react-dom": "^16.9.1",
+    "node-sass": "^4.12.0",
+    "react": "^16.10.2",
+    "react-bootstrap": "^1.0.0-beta.14",
+    "react-dom": "^16.10.2",
+    "react-helmet": "^5.2.1",
+    "react-hot-loader": "^4.12.11",
+    "react-inlinesvg": "^1.1.7",
+    "react-responsive": "^8.0.1",
+    "react-scripts": "3.2.0",
+    "typescript": "^3.6.3"
+  },
+  "devDependencies": {
+    "@types/react-helmet": "^5.0.11",
+    "@types/react-responsive": "^8.0.0",
+    "sass-lint": "^1.13.1",
+    "tslint": "^5.20.0",
+    "tslint-react": "^4.1.0"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
