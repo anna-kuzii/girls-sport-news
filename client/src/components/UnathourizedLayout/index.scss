@@ -1,0 +1,32 @@
+.unathourized-header {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .btn-wrapper {
+    margin-right: 56px;
+  }
+}
+.unathourized-layout {
+  display: flex;
+  flex-direction: row;
+  justify-content: stretch;
+  height: 100%;
+
+  .bg-img {
+    flex: 0 1 40%;
+    background: url('../../assets/img/unathorized-background.png') no-repeat;
+    background-size: cover;
+  }
+
+  .page-content {
+    flex: 0 1 60%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}

@@ -3,6 +3,7 @@ import { Helmet } from 'react-helmet';
 import { hot } from 'react-hot-loader/root';
 import { Registration } from './components/Registration';
 import { Menu } from './components/Menu/index';
+import { Login } from './containers/Login';
 
 class App extends React.Component<{}> {
   public render(): JSX.Element {
@@ -21,8 +22,9 @@ class App extends React.Component<{}> {
             content='width=device-width,initial-scale=1.0'
           />
         </Helmet>
-        <Registration />
-        <Menu />
+        {/*<Registration />*/}
+        {/*<Menu />*/}
+        <Login />
       </>
     );
   }
