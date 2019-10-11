@@ -4,7 +4,7 @@ import { Logo } from '../Logo';
 import './index.scss';
 
 export const UnathourizedLayout = ({ children }: any): JSX.Element => (
-    <>
+    <div className='unathourized-wrapper'>
         <div className='unathourized-header'>
             <Logo />
             <div className='btn-wrapper'>
@@ -16,5 +16,5 @@ export const UnathourizedLayout = ({ children }: any): JSX.Element => (
             <div className='bg-img'></div>
             <div className='page-content'>{children}</div>
         </div>
-    </>
+    </div>
 )

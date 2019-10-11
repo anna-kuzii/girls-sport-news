@@ -1,7 +1,30 @@
+@import './vars';
+
 body {
   margin: 0;
 
   #root {
     height: 100vh;
+
+    .form-control {
+      &.btn-outline-danger {
+        color: $alizarin-crimson;
+        border-color: $alizarin-crimson;
+
+        &:hover {
+          background-color: $alizarin-crimson;
+          border-color: $alizarin-crimson;
+          color: $rose-white;
+        }
+      }
+    }
+
+    .btn{
+      .btn-danger {
+        background-color: $alizarin-crimson;
+        border-color: $alizarin-crimson;
+        color: $rose-white;
+      }
+    }
   }
 }

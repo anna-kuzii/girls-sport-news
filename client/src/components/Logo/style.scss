@@ -16,4 +16,11 @@
   text-align: center;
   text-decoration: none;
   background: $alizarin-crimson;
+
+  &:hover,
+  &:focus {
+    color: $rose-white;
+    outline: none;
+    text-decoration: none;
+  }
 }
