@@ -4,39 +4,6 @@
   position: relative;
   height: 100%;
 
-  .unathourized-header {
-    position: absolute;
-    z-index: 5;
-    top: 0;
-    right: 0;
-    left: 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    .btn-wrapper {
-      margin-right: 56px;
-
-      .btn-link {
-        color: $river-bed;
-
-        &:hover,
-        &:focus {
-          text-decoration: none;
-        }
-      }
-    }
-
-    @media screen and (max-width: $max-mobile-width) {
-      .btn-wrapper {
-        display: none;
-      }
-
-      .logo {
-        width: 100%;
-      }
-    }
-  }
   .unathourized-layout {
     position: relative;
     display: flex;
@@ -51,25 +18,59 @@
 
       @media screen and (max-width: $max-mobile-width) {
         position: absolute;
-        bottom: 0;
-        right: 0;
-        left: 0;
         top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
       }
     }
 
     .page-content {
       position: relative;
       display: flex;
-      flex: 0 1 60%;
       align-items: center;
+      flex: 0 1 60%;
       justify-content: center;
 
       @media screen and (max-width: $max-mobile-width) {
-        background: $black-8;
         flex-basis: 100%;
+        background: $black-8;
       }
     }
   }
 
+}
+
+.unathourized-header {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  .btn-wrapper {
+    margin-right: 56px;
+
+    .btn-link {
+      color: $river-bed;
+    }
+
+    &:hover,
+    &:focus {
+      text-decoration: none;
+    }
+  }
+
+  @media screen and (max-width: $max-mobile-width) {
+    .btn-wrapper {
+      display: none;
+    }
+
+    .logo {
+      width: 100%;
+    }
+  }
 }

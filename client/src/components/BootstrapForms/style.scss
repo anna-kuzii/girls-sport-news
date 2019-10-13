@@ -3,14 +3,14 @@
 .form-group {
   position: relative;
 
-  input.form-control {
+  .form-control {
     height: 42px;
+    font-family: $sans-regular;
+    font-size: 12px;
+    font-style: normal;
+    line-height: 16px;
     border: 1px solid $mischka;
     border-radius: 0;
-    line-height: 16px;
-    font-family: $sans-regular;
-    font-style: normal;
-    font-weight: 600;
 
     &::placeholder {
       color: $mischka;
@@ -19,12 +19,12 @@
 
   .form-label {
     font-family: $roboto-regular;
+    font-size: 10px;
     font-style: normal;
     font-weight: 500;
-    font-size: 0.75rem;
     line-height: 11px;
-    letter-spacing: 0.9px;
-    text-transform: uppercase;
+    letter-spacing: .9px;
     color: $river-bed;
+    text-transform: uppercase;
   }
 }

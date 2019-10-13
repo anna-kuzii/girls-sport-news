@@ -5,26 +5,48 @@ body {
 
   #root {
     height: 100vh;
+  }
 
-    .form-control {
-      &.btn-outline-danger {
-        color: $alizarin-crimson;
-        border-color: $alizarin-crimson;
+  .form-control {
+    &.btn-outline-danger {
+      color: $alizarin-crimson;
+      border-color: $alizarin-crimson;
 
-        &:hover {
-          background-color: $alizarin-crimson;
-          border-color: $alizarin-crimson;
-          color: $rose-white;
-        }
-      }
-    }
-
-    .btn{
-      .btn-danger {
+      &:hover {
+        color: $rose-white;
         background-color: $alizarin-crimson;
         border-color: $alizarin-crimson;
-        color: $rose-white;
       }
     }
+
+    &.is-invalid {
+      border-color: $alizarin-crimson;
+    }
+
+    &:hover,
+    &:focus {
+      box-shadow: none;
+    }
+
+  }
+
+  .btn {
+    .btn-danger {
+      color: $rose-white;
+      background-color: $alizarin-crimson;
+      border-color: $alizarin-crimson;
+    }
+
+    &:disabled {
+      color: $white;
+      background-color: $azalea;
+      border-color: $azalea;
+    }
+
+    &:hover,
+    &:focus {
+      text-decoration: none;
+    }
+
   }
 }

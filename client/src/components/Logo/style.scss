@@ -1,16 +1,15 @@
 @import '../../styles/vars.scss';
 
 .logo {
-  width: 253px;
-  height: 83px;
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 253px;
+  height: 83px;
   margin: 0;
   font-family: $sans-regular;
   font-size: 1.5rem;
   font-style: normal;
-  font-weight: 600;
   line-height: 28px;
   color: $rose-white;
   text-align: center;
@@ -20,7 +19,7 @@
   &:hover,
   &:focus {
     color: $rose-white;
-    outline: none;
     text-decoration: none;
+    outline: none;
   }
 }

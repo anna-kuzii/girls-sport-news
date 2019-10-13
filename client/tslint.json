@@ -1,5 +1,4 @@
 {
-  "rulesDirectory": [],
   "defaultSeverity": "error",
   "extends": [
     "tslint:recommended",
