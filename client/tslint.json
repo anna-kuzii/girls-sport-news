@@ -49,7 +49,8 @@
       true,
       2
     ],
-    "whitespace": [true, "check-module"]
+    "whitespace": [true, "check-module"],
+    "jsx-no-lambda": false
   },
   "linterOptions": {
     "exclude": [

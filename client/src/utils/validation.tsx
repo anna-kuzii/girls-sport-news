@@ -17,7 +17,7 @@ export const isValid = (values: IValidationValues, requirements: any): IValidati
 
     return fieldRequirements.reduce((result: IValidationValues, field: string): IValidationValues => {
         if (requirements[field].isRequired && !values[field]) {
-            return { ...result, [field]: 'is requered' };
+            return { ...result, [field]: 'is required' };
         }
 
         if (requirements[field].pattern && !requirements[field].pattern.test(values[field])) {

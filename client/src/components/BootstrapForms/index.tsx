@@ -1,8 +1,8 @@
 import React from 'react';
 import { Form } from 'react-bootstrap';
-import './style.scss'
+import './style.scss';
 
-export const InputElement = (props: any) => (
+export const InputElement = (props: any): JSX.Element => (
     <Form.Group>
         <Form.Label>{props.label}</Form.Label>
         {

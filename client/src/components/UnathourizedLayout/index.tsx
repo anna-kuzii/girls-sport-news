@@ -13,8 +13,8 @@ export const UnathourizedLayout = ({ children }: any): JSX.Element => (
             </div>
         </div>
         <div className='unathourized-layout'>
-            <div className='bg-img'></div>
+            <div className='bg-img' />
             <div className='page-content'>{children}</div>
         </div>
     </div>
-)
+);
