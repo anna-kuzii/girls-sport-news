@@ -1,4 +1,4 @@
-@import '../../styles/vars.scss';
+@import '../../../styles/vars';
 
 .form-group {
   position: relative;
@@ -11,6 +11,15 @@
     line-height: 16px;
     border: 1px solid $mischka;
     border-radius: 0;
+
+    &.is-invalid {
+      border-color: $alizarin-crimson;
+    }
+
+    &:hover,
+    &:focus {
+      box-shadow: none;
+    }
 
     &::placeholder {
       color: $mischka;
@@ -27,4 +36,6 @@
     color: $river-bed;
     text-transform: uppercase;
   }
+
+
 }

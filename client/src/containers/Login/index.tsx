@@ -2,7 +2,7 @@ import React from 'react';
 import { Form as FinalForm, Field, FormRenderProps } from 'react-final-form';
 import { Button } from 'react-bootstrap';
 import { UnathourizedLayout } from '../../components/UnathourizedLayout';
-import { InputElement } from '../../components/BootstrapForms';
+import { InputElement } from '../../components/BootstrapForms/Input';
 import { isValid, IValidationValues } from '../../utils/validation';
 import { EMAIL_REGEXP } from '../../constants/common.constants';
 import './style.scss';
@@ -27,6 +27,8 @@ export const Login = (): JSX.Element => {
     const onSubmit = (): void => {
         // TODO add logic
     };
+
+    // TODO change to Link when we will have routing
     const forgotPasswordLink = (<a href='#'>Forgot password?</a>);
 
     return (

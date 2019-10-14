@@ -54,6 +54,10 @@
   .btn-wrapper {
     margin-right: 56px;
 
+    @media screen and (max-width: $max-mobile-width) {
+      display: none;
+    }
+
     .btn {
       padding-right: 30px;
       padding-left: 30px;
@@ -73,12 +77,8 @@
     }
   }
 
-  @media screen and (max-width: $max-mobile-width) {
-    .btn-wrapper {
-      display: none;
-    }
-
-    .logo {
+  .logo {
+    @media screen and (max-width: $max-mobile-width) {
       width: 100%;
     }
   }

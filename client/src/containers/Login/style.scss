@@ -52,8 +52,8 @@
     border-radius: 0;
   }
 
-  @media screen and (max-width: $max-mobile-width) {
-    .form-label {
+  .form-label {
+    @media screen and (max-width: $max-mobile-width) {
       color: $white;
     }
   }

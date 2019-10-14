@@ -7,6 +7,7 @@ import { Login } from './containers/Login';
 
 class App extends React.Component<{}> {
   public render(): JSX.Element {
+    // Todo uncomment when we will have routing on UI
     return (
       <>
         <Helmet
