@@ -1,0 +1,25 @@
+@import '../../styles/vars.scss';
+
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 253px;
+  height: 83px;
+  margin: 0;
+  font-family: $sans-regular;
+  font-size: 1.5rem;
+  font-style: normal;
+  line-height: 28px;
+  color: $rose-white;
+  text-align: center;
+  text-decoration: none;
+  background: $alizarin-crimson;
+
+  &:hover,
+  &:focus {
+    color: $rose-white;
+    text-decoration: none;
+    outline: none;
+  }
+}

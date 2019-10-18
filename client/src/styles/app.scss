@@ -1,0 +1,39 @@
+@import './vars';
+
+body {
+  margin: 0;
+
+  .form-control {
+    &.btn-outline-danger {
+      color: $alizarin-crimson;
+      border-color: $alizarin-crimson;
+
+      &:hover {
+        color: $rose-white;
+        background-color: $alizarin-crimson;
+        border-color: $alizarin-crimson;
+      }
+    }
+
+  }
+
+  .btn {
+    .btn-danger {
+      color: $rose-white;
+      background-color: $alizarin-crimson;
+      border-color: $alizarin-crimson;
+    }
+
+    &:disabled {
+      color: $white;
+      background-color: $azalea;
+      border-color: $azalea;
+    }
+
+    &:hover,
+    &:focus {
+      text-decoration: none;
+    }
+
+  }
+}

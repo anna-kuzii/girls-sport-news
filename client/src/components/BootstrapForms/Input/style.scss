@@ -1,0 +1,39 @@
+@import '../../../styles/vars';
+
+.form-group {
+  position: relative;
+
+  .form-control {
+    height: 42px;
+    font-family: $sans-regular;
+    font-size: 12px;
+    font-style: normal;
+    line-height: 16px;
+    border: 1px solid $mischka;
+    border-radius: 0;
+
+    &.is-invalid {
+      border-color: $alizarin-crimson;
+    }
+
+    &:hover,
+    &:focus {
+      box-shadow: none;
+    }
+
+    &::placeholder {
+      color: $mischka;
+    }
+  }
+
+  .form-label {
+    font-family: $roboto-regular;
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 11px;
+    letter-spacing: .9px;
+    color: $river-bed;
+    text-transform: uppercase;
+  }
+}
