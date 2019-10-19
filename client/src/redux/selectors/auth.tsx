@@ -1,6 +1,7 @@
 import { createSelector } from 'reselect';
 import { IStore } from '../reducers';
 import { IAuth } from '../reducers/login/login.model';
+import { IError } from '../common.model';
 
 const authState = (state: IStore): IAuth => state.auth;
 
