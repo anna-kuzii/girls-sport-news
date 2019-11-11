@@ -1,31 +1,1 @@
-import mongoose from 'mongoose';
-
-const userSchema = mongoose.Schema({
-  _id: mongoose.Schema.Types.ObjectId,
-  first_name: {
-    type: String,
-    required: true,
-  },
-  last_name: {
-    type: String,
-    required: true,
-  },
-  email: {
-    type: String,
-    required: true,
-    unique: true,
-  },
-  password: {
-    type: String,
-    required: true,
-  },
-  profilePicture: Buffer,
-  created: {
-    type: Date,
-    default: Date.now,
-  },
-});
-
-const User = mongoose.model('User', userSchema);
-
-module.exports = User;
+import { Schema } from 'mongoose';import crypto from 'crypto';import jwt from 'jsonwebtoken';import appConfig from '../../configs/app.config';const userSchema = new Schema({  first_name: {    type: String,  },  last_name: {    type: String,  },  email: {    type: String,    required: true,    unique: true,  },  password: {    type: String,    required: true,  },  profilePicture: Buffer,  created: {    type: Date,    default: Date.now,  },});userSchema.methods.setPassword = (password: string) => {  // @ts-ignore  this.salt = crypto.randomBytes(16).toString('hex');  // @ts-ignore  this.hash = crypto.pbkdf2Sync(password, this.salt, 10000, 512, 'sha512').toString('hex');};userSchema.methods.validatePassword = (password: string) => {  // @ts-ignore  const hash = crypto.pbkdf2Sync(password, this.salt, 10000, 512, 'sha512').toString('hex');  // @ts-ignore  return this.hash === hash;};// @ts-ignoreuserSchema.methods.generateAuthToken = () => {  const curDate = new Date();  const expirationDate = new Date(curDate);  expirationDate.setDate(curDate.getDate() + 60);  // @ts-ignore  return jwt.sign({    // @ts-ignore    email: this.email,    // @ts-ignore    id: this._id,    // @ts-ignore    exp: parseInt(expirationDate.getTime() / 1000, 10),  }, "appConfig.JWT_KEY");};export default userSchema;
