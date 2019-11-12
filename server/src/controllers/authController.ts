@@ -1,9 +1,7 @@
-import mongoose from 'mongoose';
-import userSchema from '../db/schemes/user';
+import Koa from 'koa';
+import User from '../db/schemes/user';
 
-const Users = mongoose.model('Users', userSchema);
-
-const signUp = async({ request, response }: any) => {
+const signUp = async({ request, response }: Koa.Context) => {
   const { body: { user } } = request;
 
   if(!user.email || !user.password) {
@@ -12,9 +10,8 @@ const signUp = async({ request, response }: any) => {
     return response;
   }
 
-  const finalUser = new Users(user);
+  const finalUser = new User(user);
 
-  // @ts-ignore
   finalUser.setPassword(user.password);
 
   await finalUser.save();

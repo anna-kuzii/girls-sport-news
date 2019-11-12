@@ -14,11 +14,12 @@ dbConnect.connect();
 app.use(koaStatic(path.join(__dirname, '..', '..', appConfig.CLIENT_PATH)));
 
 app.use(koaCors());
-app.use(router());
 
 // @ts-ignore
 app.use(passport.initialize());
 app.use(passport.session());
+
+app.use(router());
 
 app.listen(appConfig.PORT);
 
