@@ -1,13 +1,12 @@
 import React from 'react';
+import { Provider } from 'react-redux';
 import { Helmet } from 'react-helmet';
 import { hot } from 'react-hot-loader/root';
-import { Registration } from './components/Registration';
-import { Menu } from './components/Menu/index';
-import { Login } from './containers/Login';
+import { Routes } from './routes';
+import store from './redux/store';
 
 class App extends React.Component<{}> {
   public render(): JSX.Element {
-    // Todo uncomment when we will have routing on UI
     return (
       <>
         <Helmet
@@ -23,9 +22,9 @@ class App extends React.Component<{}> {
             content='width=device-width,initial-scale=1.0'
           />
         </Helmet>
-        {/*<Registration />*/}
-        {/*<Menu />*/}
-        <Login />
+        <Provider store={store}>
+            <Routes />
+        </Provider>
       </>
     );
   }

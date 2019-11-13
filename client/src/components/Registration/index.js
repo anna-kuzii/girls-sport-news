@@ -4,6 +4,7 @@ import './style.scss';
 import facebookIcon from '../../assets/img/facebook-icon.svg';
 import twitterIcon from '../../assets/img/twitter-icon.svg';
 import SVG from 'react-inlinesvg';
+import { UnathourizedLayout } from '../UnathourizedLayout'
 
 export class Registration extends Component {
   constructor(props) {
@@ -138,96 +139,98 @@ export class Registration extends Component {
       buttonState = !(firstName && lastName && email && password);
 
     return (
-      <Container className='registrationWrapper formWrapper'>
-        <h1>Create Account</h1>
-        <section className='socialIcons'>
-          <SVG src={facebookIcon} className='facebookIcon' />
-          <SVG src={twitterIcon} className='twitterIcon' />
-        </section>
-        <form method='post'>
-          <fieldset>
-            <legend>OR use your email for registration:</legend>
-            <Row>
-              <Col
-                className={`inputItem ${fNameError}`}
-                md={6}
-                xs={12}
-              >
-                <label htmlFor='firstName'>First name</label>
-                <input
-                  type='text'
-                  name='firstName'
-                  id='firstName'
-                  required
-                  placeholder='John'
-                  onChange={this.handleChange}
-                />
-                <div className='error-messages'>{errors.firstName}</div>
-              </Col>
-              <Col
-                className={`inputItem ${lNameError}`}
-                md={6}
-                xs={12}
-              >
-                <label htmlFor='lastName'>Last name</label>
-                <input
-                  type='text'
-                  name='lastName'
-                  id='lastName'
-                  required
-                  placeholder='Doe'
-                  onChange={this.handleChange}
-                />
-                <div className='error-messages'>{errors.lastName}</div>
-              </Col>
-            </Row>
-            <Row>
-              <Col
-                xs={12}
-                className={`inputItem ${emailError}`}
-              >
-                <label htmlFor='email'>Email</label>
-                <input
-                  type='email'
-                  name='email'
-                  id='email'
-                  required
-                  placeholder='jonhdoe@gmail.com'
-                  onChange={this.handleChange}
-                />
-                <div className='error-messages'>{errors.email}</div>
-              </Col>
-              <Col
-                xs={12}
-                className={`inputItem ${passError}`}
-              >
-                <label htmlFor='password'>Password</label>
-                <input
-                  type='password'
-                  name='password'
-                  id='password'
-                  minLength='4'
-                  required
-                  placeholder='4 + characters'
-                  onChange={this.handleChange}
-                />
-                <div className='error-messages'>{errors.password}</div>
-              </Col>
-              <Col
-                xs={12}
-                className='inputItem'
-              >
-                <input
-                  name='submit'
-                  type='submit'
-                  value='Sign up'
-                  disabled={buttonState}
-                />
-              </Col>
-            </Row>
-          </fieldset>
-        </form>
-      </Container>
+      <UnathourizedLayout>
+        <Container className='registrationWrapper formWrapper'>
+          <h1>Create Account</h1>
+          <section className='socialIcons'>
+            <SVG src={facebookIcon} className='facebookIcon' />
+            <SVG src={twitterIcon} className='twitterIcon' />
+          </section>
+          <form method='post'>
+            <fieldset>
+              <legend>OR use your email for registration:</legend>
+              <Row>
+                <Col
+                  className={`inputItem ${fNameError}`}
+                  md={6}
+                  xs={12}
+                >
+                  <label htmlFor='firstName'>First name</label>
+                  <input
+                    type='text'
+                    name='firstName'
+                    id='firstName'
+                    required
+                    placeholder='John'
+                    onChange={this.handleChange}
+                  />
+                  <div className='error-messages'>{errors.firstName}</div>
+                </Col>
+                <Col
+                  className={`inputItem ${lNameError}`}
+                  md={6}
+                  xs={12}
+                >
+                  <label htmlFor='lastName'>Last name</label>
+                  <input
+                    type='text'
+                    name='lastName'
+                    id='lastName'
+                    required
+                    placeholder='Doe'
+                    onChange={this.handleChange}
+                  />
+                  <div className='error-messages'>{errors.lastName}</div>
+                </Col>
+              </Row>
+              <Row>
+                <Col
+                  xs={12}
+                  className={`inputItem ${emailError}`}
+                >
+                  <label htmlFor='email'>Email</label>
+                  <input
+                    type='email'
+                    name='email'
+                    id='email'
+                    required
+                    placeholder='jonhdoe@gmail.com'
+                    onChange={this.handleChange}
+                  />
+                  <div className='error-messages'>{errors.email}</div>
+                </Col>
+                <Col
+                  xs={12}
+                  className={`inputItem ${passError}`}
+                >
+                  <label htmlFor='password'>Password</label>
+                  <input
+                    type='password'
+                    name='password'
+                    id='password'
+                    minLength='4'
+                    required
+                    placeholder='4 + characters'
+                    onChange={this.handleChange}
+                  />
+                  <div className='error-messages'>{errors.password}</div>
+                </Col>
+                <Col
+                  xs={12}
+                  className='inputItem'
+                >
+                  <input
+                    name='submit'
+                    type='submit'
+                    value='Sign up'
+                    disabled={buttonState}
+                  />
+                </Col>
+              </Row>
+            </fieldset>
+          </form>
+        </Container>
+      </UnathourizedLayout>
     );
   }
 }

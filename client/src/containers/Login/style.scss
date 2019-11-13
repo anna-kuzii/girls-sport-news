@@ -17,6 +17,21 @@
     }
   }
 
+  &.login-error {
+    h2 {
+      margin-bottom: 0;
+    }
+  }
+
+  .error-message {
+    margin-bottom: 15px;
+    font-family: $sans-regular;
+    font-size: 10px;
+    font-style: normal;
+    line-height: 14px;
+    color: $alizarin-crimson;
+  }
+
   .text-muted {
     position: absolute;
     top: 0;
